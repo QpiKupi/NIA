@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 20px auto;
             padding: 20px;
             background-color: #f5f5f5;
             color: #333;
@@ -17,14 +17,11 @@
             color: #2c3e50;
             text-align: center;
         }
-        .image-container {
-            text-align: center;
-            margin: 20px 0;
-        }
         img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
+            margin: 20px 0;
         }
         .toggle {
             background-color: #ecf0f1;
@@ -39,87 +36,30 @@
             background-color: #fff;
             border-radius: 5px;
         }
-        .search-box {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        input {
-            width: 70%;
-            padding: 8px;
-            margin-right: 10px;
-        }
-        button {
-            padding: 8px 15px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #2980b9;
-        }
-        #result {
-            margin-top: 10px;
-            color: #27ae60;
-        }
     </style>
 </head>
 <body>
     <h1>Fotosíntesis</h1>
+    <p>La fotosíntesis es el proceso por el cual las plantas convierten la luz solar en energía, produciendo oxígeno y glucosa.</p>
     
-    <div class="image-container">
-        <img src="https://via.placeholder.com/600x300?text=Diagrama+de+Fotosíntesis" alt="Diagrama de Fotosíntesis">
-        <p>Diagrama básico del proceso de fotosíntesis.</p>
-    </div>
-
-    <p><strong>¿Qué es?</strong> La fotosíntesis es el proceso por el cual las plantas, algas y algunas bacterias convierten la luz solar en energía, produciendo oxígeno y glucosa.</p>
-
+    <img src="https://via.placeholder.com/600x300?text=Diagrama+de+Fotosíntesis" alt="Diagrama de Fotosíntesis">
+    
     <div class="toggle" onclick="toggleContent('formula')">Fórmula Química</div>
     <div id="formula" class="toggle-content">6CO₂ + 6H₂O + luz → C₆H₁₂O₆ + 6O₂</div>
-
+    
     <div class="toggle" onclick="toggleContent('pasos')">Pasos Principales</div>
     <div id="pasos" class="toggle-content">
-        <ol>
-            <li><strong>Reacción dependiente de la luz:</strong> La clorofila captura la luz y genera energía.</li>
-            <li><strong>Ciclo de Calvin:</strong> La energía convierte CO₂ en glucosa.</li>
-        </ol>
-    </div>
-
-    <div class="toggle" onclick="toggleContent('video')">Video Explicativo</div>
-    <div id="video" class="toggle-content">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/sQK3Yr4Sc_k" frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <div class="search-box">
-        <h3>Busca con IA</h3>
-        <input type="text" id="searchInput" placeholder="Describe lo que buscas (ej: 'cómo las plantas usan luz')">
-        <button onclick="searchAI()">Buscar</button>
-        <div id="result"></div>
+        1. La clorofila captura la luz.<br>
+        2. El CO₂ se convierte en glucosa.
     </div>
 
     <script>
         function toggleContent(id) {
-            const content = document.getElementById(id);
+            var content = document.getElementById(id);
             if (content.style.display === "block") {
                 content.style.display = "none";
             } else {
                 content.style.display = "block";
-            }
-        }
-
-        function searchAI() {
-            const input = document.getElementById("searchInput").value.toLowerCase();
-            const result = document.getElementById("result");
-            if (input.includes("luz") || input.includes("sol")) {
-                result.innerHTML = "Quizás buscas: <strong>Clorofila</strong> o <strong>Fotorrespiración</strong>.";
-            } else if (input.includes("energía") || input.includes("glucosa")) {
-                result.innerHTML = "Quizás buscas: <strong>Ciclo de Calvin</strong>.";
-            } else {
-                result.innerHTML = "Intenta describirlo mejor, ¡te ayudaré a encontrar lo que buscas!";
             }
         }
     </script>
